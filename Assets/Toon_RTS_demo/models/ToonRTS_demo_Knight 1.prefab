@@ -49,7 +49,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b3ae2273451ef0143a935a5ad49faf7a, type: 2}
+  - {fileID: 2100000, guid: 227e885d1e78ee9488cd6c19a4f9b38b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -110,10 +110,11 @@ GameObject:
   m_Component:
   - component: {fileID: 6116486726976777669}
   - component: {fileID: 6116486726966919703}
-  - component: {fileID: -3217406175008342437}
+  - component: {fileID: -421945426734417390}
+  - component: {fileID: -2556689380975018771}
   m_Layer: 0
   m_Name: ToonRTS_demo_Knight 1
-  m_TagString: Untagged
+  m_TagString: Human
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144,7 +145,7 @@ Animator:
   m_GameObject: {fileID: 6116486726976287141}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: ba24e610e0a338545b447ff44a3cf1cc, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e75b4b372b18c5e4c92b5c82c9f3006d, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -153,7 +154,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-3217406175008342437
+--- !u!114 &-421945426734417390
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,10 +163,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 6116486726976287141}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dca5edb71a51b5549b90bcf21dbaf410, type: 3}
+  m_Script: {fileID: 11500000, guid: 00977643f0e0e094a82de5ade4e7b237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.001
+--- !u!135 &-2556689380975018771
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6116486726976287141}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.5
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &6116486726976287143
 GameObject:
   m_ObjectHideFlags: 0

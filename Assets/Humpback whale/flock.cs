@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class flock : MonoBehaviour
 {
+    Animator animtor;
     public float speed = 0.001f;
     float rotationSpeed = 4.0f;
     Vector3 averageHeading;
     Vector3 averagePosition;
     float neighbourDistance = 3.0f;
 
+   // bool isAttack = false;
     bool turning = false;
     // Start is called before the first frame update
     void Start()
     {
         speed = Random.Range(0.5f, 1);
+        animtor = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -39,7 +42,7 @@ public class flock : MonoBehaviour
             if (Random.Range(0, 5) < 3)
                 ApplyRules();
         }
-
+        
         transform.Translate(0, 0, Time.deltaTime * speed);
     }
 
@@ -78,8 +81,8 @@ public class flock : MonoBehaviour
                 }
             }
         }
-
-        if(groupSize > 0)
+       
+        if (groupSize > 0)
         {
             vcentre = vcentre / groupSize + (goalPos - this.transform.position);
             speed = gSpeed / groupSize;
@@ -88,5 +91,16 @@ public class flock : MonoBehaviour
             if (direction != Vector3.zero)
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), rotationSpeed * Time.deltaTime);
         }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        UnityEngine.Profiling.Profiler.BeginSample("Physics Test");
+        if (other.gameObject.tag == "Human")
+        {
+            Debug.Log("병사 공격" + other.name);
+            animtor.SetBool("isAttack", true);
+        }
+        UnityEngine.Profiling.Profiler.EndSample();
     }
 }
